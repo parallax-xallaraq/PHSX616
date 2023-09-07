@@ -1,0 +1,32 @@
+-------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\Lab1 - Two Slit Interference\Data\2-Slit Interference Lab - Laser Interference Pattern (fine)-8_24_23.csv
+
+Laser interference pattern. ,Two slit
+"Laser is shone through a stationary single slit, then a stationary double slit. It then shines through a movable single slit which can be panned across the photodiode. ",
+We are measuring the interference pattern by recording the voltages from the photodiode as we sweep the single slit across it,
+Double Slit: 5.82 mm,
+Note: The prof said that we should have a smaller interval when we collect our data. So were doing it again,
+Laser off (V),0.011
+"Sometimes flickers to 0.011, but usually ",+/- 0.001
+
+-------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\Lab1 - Two Slit Interference\Data\2-Slit Interference Lab - Laser Single Slit-8_24_23.csv
+
+Laser interference pattern. ,Single slit
+"Laser is shone through a stationary single slit, then a stationary SINGLE slit. It then shines through a movable single slit which can be panned across the photodiode. ",
+We are measuring the interference pattern by recording the voltages from the photodiode as we sweep the single slit across it,
+Single Slit micrometer position: 5.82 mm,5.20 (mm)
+,
+Laser off (V),0.011
+"Sometimes flickers to 0.011, but usually ",+/- 0.001
+
+-------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\Lab1 - Two Slit Interference\Data\2-Slit Interference Lab - Bulb Interference Pattern-8_31_23.csv
+
+Bulb Interference pattern. ,Two slit,
+"Bulb is shone through a stationary single slit, then a stationary double slit. It then shines through a movable single slit which can be panned across the photomultiplier.",,
+We are measuring the interference pattern by recording the pulse count from the pulse counter as we sweep the single slit across it.,,
+Double Slit: 5.82 mm,10 sec,Dark current 16-27
+,,
+Laser off (V),0.011,+/- 0.001
+"Sometimes flickers to 0.011, but usually ",,
