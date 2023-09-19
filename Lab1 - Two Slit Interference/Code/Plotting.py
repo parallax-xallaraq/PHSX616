@@ -70,6 +70,7 @@ def PlotMultiXY(
     xlab: str,          # label on x axis 
     ylab: str,          # label on y axis
     color: list,        # color of the line 
+    linestyle: list,    # style of each line 
     legend: list,       # lables for xy pair on legend
     xlim: list = None,  # x axis range
     ylim: list = None,  # y axis range
@@ -89,10 +90,10 @@ def PlotMultiXY(
     ax.yaxis.set_minor_locator(AutoMinorLocator(4))
     ax.grid()
     # data
-    for xl,yl,cl,ll in zip(x,y,color,legend) : 
+    for xl,yl,cl,ll,ls in zip(x,y,color,legend,linestyle) : 
         plt.plot(xl, yl,
                  color=cl, alpha=0.7,
-                 linestyle='-', linewidth=1,
+                 linestyle=ls, linewidth=1,
                  label=ll)
     plt.legend()
     # finish 
