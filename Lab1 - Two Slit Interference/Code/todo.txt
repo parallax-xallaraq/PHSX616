@@ -1,4 +1,4 @@
 9/19/23
 
 the prof wants data plots to be discrete points with error bars
-there is a bell curve of minima on the laser 2s. try to subtract this and then fit?
+chi squared
