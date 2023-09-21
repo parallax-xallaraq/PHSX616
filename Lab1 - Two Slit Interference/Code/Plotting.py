@@ -100,3 +100,58 @@ def PlotMultiXY(
     if(fileName != '') : Save(fileName)
     plt.show()
     plt.close()
+
+def PlotMultiXY_DualY(
+    # y axis 1
+    x_ax1: list[np.array],  # x axis data points
+    y_ax1: list[np.array],  # y axis data points
+    ylab_ax1: str,          # label on y axis   
+    color_ax1: list,        # color of the line 
+    linestyle_ax1: list,    # style of each line 
+    legend_ax1: list,       # lables for xy pair on legend
+    # y axis 2
+    x_ax2: list[np.array],  # x axis data points
+    y_ax2: list[np.array],  # y axis data points
+    ylab_ax2: str,          # label on y axis
+    color_ax2: list,        # color of the line 
+    linestyle_ax2: list,    # style of each line 
+    legend_ax2: list,       # lables for xy pair on legend
+    # shared properties 
+    xlab: str,              # label on x axis 
+    xlim: list = None,      # x axis range
+    ylim: list = None,      # y axis range
+    fileName: str = ''      # filename to save the figure as
+) : 
+    """Basic plotting function for x and y data arrays.""" # Help with two y axis: https://matplotlib.org/stable/gallery/subplots_axes_and_figures/two_scales.html 
+    # make figure 
+    fig, ax1 = plt.subplots()
+    # plot ax1 lines
+    ax1.set_ylabel(ylab_ax1, color=color_ax1[0])
+    ax1.tick_params(axis='y', labelcolor=color_ax1[0])
+    for xl,yl,cl,ll,ls in zip(x_ax1,y_ax1,color_ax1,legend_ax1,linestyle_ax1) : 
+        ax1.plot(xl, yl,
+                 color=cl, alpha=0.7,
+                 linestyle=ls, linewidth=1,
+                 label=ll)
+    # plot ax 2 lines 
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    ax2.set_ylabel(ylab_ax2, color=color_ax2[0])
+    ax2.tick_params(axis='y', labelcolor=color_ax2[0])
+    for xl,yl,cl,ll,ls in zip(x_ax2,y_ax2,color_ax2,legend_ax2,linestyle_ax2) : 
+        ax2.plot(xl, yl,
+                 color=cl, alpha=0.7,
+                 linestyle=ls, linewidth=1,
+                 label=ll)
+    # formatting 
+    SetStyle()
+    ax1.xaxis.set_minor_locator(AutoMinorLocator(4))
+    ax1.yaxis.set_minor_locator(AutoMinorLocator(4))
+    ax1.grid()
+    ax1.set_xlabel(xlab)
+    if(xlim != None) : plt.xlim(xlim)
+    if(ylim != None) : plt.ylim(ylim)
+    fig.legend(loc="upper right", bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes)
+    # finish 
+    if(fileName != '') : Save(fileName)
+    plt.show()
+    plt.close()

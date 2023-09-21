@@ -1,6 +1,5 @@
 9/19/23
 
-fix axis on plot with both green and red laser. Can do this by normalizing or by having two color-coded axis.
 overplot red and green fits
 the prof wants data plots to be discrete points with error bars
 why is red laser phase shifted in interference/beta?
