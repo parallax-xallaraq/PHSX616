@@ -39,3 +39,9 @@ Bulb Interference pattern. ,Two slit,,,
 "Bulb is shone through a stationary single slit, then a stationary double slit. It then shines through a movable single slit which can be panned across the photomultiplier.",,,,
 We are measuring the interference pattern by recording the pulse count from the pulse counter as we sweep the single slit across it.,,,,
 Double Slit: 5.82 mm,10 sec,,,
+
+-------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\GitHub\PHSX616\Lab1 - Two Slit Interference\Data\2-Slit Interference Lab - Bulb Single Slit-9_19_23.csv
+
+Bulb Interference pattern. ,One slit,
+Double Slit: 6.66 mm,10 sec,Dark current 16-27
