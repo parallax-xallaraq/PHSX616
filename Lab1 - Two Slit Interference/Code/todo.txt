@@ -1,6 +1,4 @@
 9/19/23
 
-overplot red and green fits
 the prof wants data plots to be discrete points with error bars
-why is red laser phase shifted in interference/beta?
 there is a bell curve of minima on the laser 2s. try to subtract this and then fit?
