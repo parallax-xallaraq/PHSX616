@@ -41,7 +41,10 @@ def PlotXY(
     y: np.array,        # y axis data points
     xlab: str,          # label on x axis 
     ylab: str,          # label on y axis
+    xerr: float = 0,    # error on x axis
+    yerr: float = 0,    # error on y axis
     color = 'k',        # color of the line 
+    linestyle = '--',   # style of xy curve line
     xlim: list = None,  # x axis range 
     ylim: list = None,  # y axis range 
     fileName: str = ''  # filename to save the figure as
@@ -58,17 +61,20 @@ def PlotXY(
     ax.yaxis.set_minor_locator(AutoMinorLocator(4))
     ax.grid()
     # data
-    plt.plot(x,y,color=color)
+    plt.errorbar(x, y, yerr=yerr, xerr=xerr, elinewidth=0.8, c=color, linestyle=linestyle, linewidth=0.5)
     # finish 
     if(fileName != '') : Save(fileName)
     plt.show()
     plt.close()
+
 
 def PlotMultiXY(
     x: list[np.array],  # x axis data points
     y: list[np.array],  # y axis data points
     xlab: str,          # label on x axis 
     ylab: str,          # label on y axis
+    xerr: list[float],  # error on x axis
+    yerr: list[float],  # error on y axis
     color: list,        # color of the line 
     linestyle: list,    # style of each line 
     legend: list,       # lables for xy pair on legend
@@ -90,11 +96,10 @@ def PlotMultiXY(
     ax.yaxis.set_minor_locator(AutoMinorLocator(4))
     ax.grid()
     # data
-    for xl,yl,cl,ll,ls in zip(x,y,color,legend,linestyle) : 
-        plt.plot(xl, yl,
-                 color=cl, alpha=0.7,
-                 linestyle=ls, linewidth=1,
-                 label=ll)
+    for xl,yl,xr,yr,cl,ll,ls in zip(x,y,xerr,yerr, color,legend,linestyle) : 
+        plt.errorbar(xl, yl, 
+                     xerr=xr, yerr=yr, elinewidth=0.8,
+                     c=cl, linestyle=ls, linewidth=0.5, label=ll)
     plt.legend()
     # finish 
     if(fileName != '') : Save(fileName)
@@ -105,6 +110,8 @@ def PlotMultiXY_DualY(
     # y axis 1
     x_ax1: list[np.array],  # x axis data points
     y_ax1: list[np.array],  # y axis data points
+    xerr_ax1: list[float],  # error on x axis
+    yerr_ax1: list[float],  # error on y axis
     ylab_ax1: str,          # label on y axis   
     color_ax1: list,        # color of the line 
     linestyle_ax1: list,    # style of each line 
@@ -112,6 +119,8 @@ def PlotMultiXY_DualY(
     # y axis 2
     x_ax2: list[np.array],  # x axis data points
     y_ax2: list[np.array],  # y axis data points
+    xerr_ax2: list[float],  # error on x axis
+    yerr_ax2: list[float],  # error on y axis
     ylab_ax2: str,          # label on y axis
     color_ax2: list,        # color of the line 
     linestyle_ax2: list,    # style of each line 
@@ -128,20 +137,18 @@ def PlotMultiXY_DualY(
     # plot ax1 lines
     ax1.set_ylabel(ylab_ax1, color=color_ax1[0])
     ax1.tick_params(axis='y', labelcolor=color_ax1[0])
-    for xl,yl,cl,ll,ls in zip(x_ax1,y_ax1,color_ax1,legend_ax1,linestyle_ax1) : 
-        ax1.plot(xl, yl,
-                 color=cl, alpha=0.7,
-                 linestyle=ls, linewidth=1,
-                 label=ll)
+    for xl,yl,xr,yr,cl,ll,ls in zip(x_ax1,y_ax1,xerr_ax1,yerr_ax1,color_ax1,legend_ax1,linestyle_ax1) : 
+        ax1.errorbar(xl, yl, 
+                     xerr=xr, yerr=yr, elinewidth=0.8,
+                     c=cl, linestyle=ls, linewidth=0.5, label=ll)
     # plot ax 2 lines 
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
     ax2.set_ylabel(ylab_ax2, color=color_ax2[0])
     ax2.tick_params(axis='y', labelcolor=color_ax2[0])
-    for xl,yl,cl,ll,ls in zip(x_ax2,y_ax2,color_ax2,legend_ax2,linestyle_ax2) : 
-        ax2.plot(xl, yl,
-                 color=cl, alpha=0.7,
-                 linestyle=ls, linewidth=1,
-                 label=ll)
+    for xl,yl,xr,yr,cl,ll,ls in zip(x_ax2,y_ax2,xerr_ax2,yerr_ax2,color_ax2,legend_ax2,linestyle_ax2) : 
+        plt.errorbar(xl, yl, 
+                     xerr=xr, yerr=yr, elinewidth=0.8,
+                     c=cl, linestyle=ls, linewidth=0.5, label=ll)
     # formatting 
     SetStyle()
     ax1.xaxis.set_minor_locator(AutoMinorLocator(4))
