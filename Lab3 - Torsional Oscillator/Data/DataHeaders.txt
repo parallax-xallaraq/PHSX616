@@ -1,0 +1,8 @@
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\GitHub\PHSX616\Lab3 - Torsional Oscillator\Data\Resonance.csv
+10/24,,
+Measuring Resonance,,
+Souce Vpp [V],5,
+Source offset,0,
+Voltage uncertainty +/- 0.5,
+
+Center measurement = 3.46 +/- 0.05
