@@ -11,3 +11,11 @@ Center measurement = 3.46 +/- 0.05
 C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\GitHub\PHSX616\Lab3 - Torsional Oscillator\Data\V1VarVpp.csv
 10/26,
 v^1 magnetic damping ,
+
+--------------------------------------------------------------------------------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\GitHub\PHSX616\Lab3 - Torsional Oscillator\Data\ResonanceVpp025.csv
+10/31,,
+Measuring Resonance,,
+Souce Vpp [V],0.25,
+,,
+,+/- 0.5,
