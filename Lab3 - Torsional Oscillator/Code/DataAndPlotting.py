@@ -72,3 +72,23 @@ def UnpackAllTables(filenames: dict[str,str]) -> dict[str, dict[str, np.array]] 
         # print some helpful info 
         print(experiment, 'columns:\t', list(tables[experiment].keys() ))
     return tables
+
+def AxText(ax,txt,x,y,fontsize=8) : 
+    ax.text(x,y, # x,y 
+            txt, # string
+            transform=ax.transAxes,         # use axis coordinants
+            horizontalalignment='left',    # alignment 
+            fontsize=fontsize               # font size
+    )
+
+def AxTextBL(ax, txt, fontsize=8): # BL bottom left 
+    AxText(ax,txt,0.02,0.05,fontsize=fontsize)
+
+def AxTextTL(ax, txt, fontsize=8): # TL top left 
+    AxText(ax,txt,0.02,0.90,fontsize=fontsize)
+
+def AxTextBBL(ax,txt,fontsize=8):
+    AxText(ax,txt,0.02,0.15,fontsize=fontsize)
+
+def AxTextTTL(ax, txt, fontsize=8):
+    AxText(ax,txt,0.02,0.80,fontsize=fontsize)
