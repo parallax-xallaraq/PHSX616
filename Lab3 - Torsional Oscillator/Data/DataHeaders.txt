@@ -19,3 +19,10 @@ Measuring Resonance,,
 Souce Vpp [V],0.25,
 ,,
 ,+/- 0.5,
+--------------------------------------------------------------------------------------------------------------------------------------
+C:\Users\polar\OneDrive - The University of Kansas\PHSX 616\GitHub\PHSX616\Lab3 - Torsional Oscillator\Data\V0VarVpp_trial1.csv
+11/2,
+v^0 sliding friction damping ,
+150 g weights on strings,
+,
+,
